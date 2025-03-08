@@ -58,26 +58,61 @@ PostgreSQL: Database management and data storage.
 
 Python (ETL process): Data cleaning and transformation.
 
-Future Improvements
+### Running the Project
 
-Extend the dataset with more recent hiring data.
+#### Cloning the Repository  
+To start, clone the repository by running the following command:
 
-Implement data deduplication before visualization.
+```bash
+git clone https://github.com/memerazo/datachallenge
+```
 
-Conduct deeper statistical analysis to extract more insights.
+#### Creating a Virtual Environment  
+Create a virtual environment using the following command:
 
-How to Run the Project
+```bash
+python -m venv datachallenge
+```
 
-Ensure you have access to the PostgreSQL database.
+To activate it, navigate to the `venv/Scripts` folder and run:
 
-Load the clean_applicants table from the candidates database.
+```bash
+activate
+```
 
-Open Power BI and connect to PostgreSQL.
+#### Setting Up Credentials  
+To connect to the database, you need a JSON file named `credentials.json` inside the project folder. The file should have the following structure:
 
-Load the dataset and refresh the visuals.
+```json
+{
+    "db_host": "DB_HOST",
+    "db_name": "DB_NAME",
+    "db_user": "DB_USER",
+    "db_password": "DB_PASSWORD",
+    "db_port": "DB_PORT"    
+}
+```
 
-Explore the dashboard and analyze the insights.
+#### Installing Dependencies  
+The required dependencies are listed in the `requirements.txt` file. Install them using:
 
-Conclusion
+```bash
+pip install -r requirements.txt
+```
 
-This project provided valuable insights into hiring trends and helped develop skills in Power BI, data visualization, and database connections. Lessons learned include the importance of data cleaning and more in-depth analysis. Future iterations will aim to improve data quality and expand the analysis for better decision-making.
+#### Running the Notebooks  
+Follow this order to execute the notebooks:
+
+1. `code/dataload.ipynb`
+2. `code/datachallenge.ipynb`
+
+#### Connecting the Database with Power BI  
+1. Open Power BI Desktop and create a new file.  
+2. Select "Get Data" and choose "PostgreSQL Database".  
+3. Enter the PostgreSQL server and database name, then click "Accept".  
+4. Fill in the credentials and confirm.  
+5. Once connected, select the table with the cleaned data to start building the dashboard.
+
+### Project Insights  
+This project provided valuable insights into hiring trends and helped develop skills in Power BI, data visualization, and database connections. Key lessons included the importance of data cleaning and the need for deeper analysis. Future iterations will focus on improving data quality and expanding the analysis for better decision-making.
+
